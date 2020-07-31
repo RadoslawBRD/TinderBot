@@ -13,4 +13,4 @@ bot.like() ## single like
 
 bot.dislike() ## single dislike
 
-bot.auto_swipe() ## auto swpie with random like/dislike
+bot.auto_swipe() ## auto swipe with random like/dislike
