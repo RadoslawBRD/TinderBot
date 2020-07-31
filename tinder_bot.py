@@ -17,13 +17,15 @@ class TinderBot():
         
         self.driver.get('https://tinder.com')
         sleep(6)
-
+        
+        #allow for coockies
         coockie_btn=self.driver.find_element_by_xpath('//*[@id="content"]/div/div[2]/div/div/div[1]/button')
         coockie_btn.click()
         #more_btn = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/span/button')
         #more_btn.click()
         #sleep(1)
-
+        
+        #select login by Facebook
         fb_btn = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/span/div[2]/button')
 
         fb_btn.click()
@@ -41,19 +43,22 @@ class TinderBot():
         pw_in.send_keys('<password>')
         login_btn.click()
         #oczekiwanie aż użytkownik wprowadzi 2FA
+        #waiting for user to 2FA
         input("Press enter to continue...")            
         self.driver.switch_to_window(self.driver.window_handles[0])
         sleep(1)
-
+        
+        #allow for location
         loc_btn = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/button[1]')
         loc_btn.click()
         sleep(1)
 
-
+        #do not allow for notification
         noti_btn = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div/div/div[3]/button[2]')
         noti_btn.click()
         sleep(1)
-        try:
+        try:    
+            #button for using tidner passport
             passp_btn = self.driver.find_element_by_xpath('//*[@id="modal-manager"]/div/div/div[1]/button')
             passp_btn.click()
         except:
